@@ -16,35 +16,65 @@ a = board[17]; b = board[21]; c = board[25];\
     d = board[45]; e = board[49]; f = board[53];\
     x = board[73]; y = board[77]; z = board[81];
 
+def other_number(player, number):
+    number = input("Enter number (1-9)\n")
+    if is_num(number) == None:
+        while is_num(number) == None:
+            number = input("Enter number (1-9)\n")
+            is_num(number)
+    else:
+        number = int(number)
+        board(player, number)
+
+    
 def board(player, number):
     global a, b, c, d, e, f, x, y, z;
     if number == 1:
         if a == " ":
             a = player
+        else:
+            other_number(player, number)
     elif number == 2:
         if b == " ":
             b = player
+        else:
+            other_number(player, number)
     elif number == 3:
         if c == " ":
             c = player
+        else:
+            other_number(player, number)
     elif number == 4:
         if d == " ":
             d = player
+        else:
+            other_number(player, number)
     elif number == 5:
         if e == " ":
             e = player
+        else:
+            other_number(player, number)
     elif number == 6:
         if f == " ":
             f = player
+        else:
+            other_number(player, number)
     elif number == 7:
         if x == " ":
             x = player
+        else:
+            other_number(player, number)
     elif number == 8:
         if y == " ":
             y = player
+        else:
+            other_number(player, number)
     elif number == 9:
         if z == " ":
             z = player
+        else:
+            other_number(player, number)
+            
     board = """
 +---+---+---+
 | """ + a + """ | """ + b + """ | """ + c + """ |
